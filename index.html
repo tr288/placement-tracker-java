@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Job Application Tracker</h1>
+
+    <div id="loginSection" class="card">
+
+        <h2>Login / Sign Up</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter Username"
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+        >
+
+        <button onclick="signup()">
+            Sign Up
+        </button>
+
+        <button onclick="login()">
+            Login
+        </button>
+
+    </div>
+
+    <div id="dashboard" style="display:none;">
+
+        <div class="top-bar">
+
+            <h2 id="welcome"></h2>
+
+            <div>
+
+                <button id="toggleTheme">
+                    🌙 Dark Mode
+                </button>
+
+                <button onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-cards">
+
+            <div class="card stat-card">
+                <h3>Total</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>Applied</h3>
+                <p id="appliedCount">0</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>OA</h3>
+                <p id="oaCount">0</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>Interview</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>Selected</h3>
+                <p id="selectedCount">0</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>Rejected</h3>
+                <p id="rejectedCount">0</p>
+            </div>
+
+        </div>
+
+        <div class="card form-card">
+
+            <h2>Add Application</h2>
+
+            <input
+                type="text"
+                id="company"
+                placeholder="Company Name"
+            >
+
+            <input
+                type="text"
+                id="role"
+                placeholder="Job Role"
+            >
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Location"
+            >
+
+            <input
+                type="number"
+                id="ctc"
+                placeholder="CTC (LPA)"
+            >
+
+            <input
+                type="date"
+                id="date"
+            >
+
+            <select id="status">
+
+                <option value="Applied">Applied</option>
+
+                <option value="OA">
+                    Online Assessment
+                </option>
+
+                <option value="Interview">
+                    Interview
+                </option>
+
+                <option value="Selected">
+                    Selected
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+            <textarea
+                id="notes"
+                placeholder="Notes..."
+                rows="3"
+            ></textarea>
+
+            <button onclick="addApplication()">
+                Add Application
+            </button>
+
+        </div>
+
+        <div class="search-filter">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Company..."
+            >
+
+            <select id="filterStatus">
+
+                <option value="All">
+                    All Status
+                </option>
+
+                <option value="Applied">
+                    Applied
+                </option>
+
+                <option value="OA">
+                    OA
+                </option>
+
+                <option value="Interview">
+                    Interview
+                </option>
+
+                <option value="Selected">
+                    Selected
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Company</th>
+
+                    <th>Role</th>
+
+                    <th>Location</th>
+
+                    <th>CTC</th>
+
+                    <th>Date</th>
+
+                    <th>Status</th>
+
+                    <th>Notes</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="applicationTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
